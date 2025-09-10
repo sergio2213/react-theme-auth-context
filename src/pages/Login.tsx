@@ -27,7 +27,7 @@ function Login() {
   }, [isLoggedIn]);
 
   return (
-    <div>
+    <div className="page-container">
       <h2>Login</h2>
       <form onSubmit={handleLogin}>
         <input type="text" value={username} onChange={handleChange} placeholder="Enter username" />

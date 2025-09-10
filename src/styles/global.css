@@ -1,0 +1,217 @@
+:root {
+  --light-bg: #f5f7fa;
+  --light-text: #2c3e50;
+  --light-card-bg: #ffffff;
+  --light-border: #e0e0e0;
+  --light-primary: #007bff;
+  --light-primary-hover: #0056b3;
+  --light-shadow: rgba(0, 0, 0, 0.08);
+}
+
+body.dark {
+  --dark-bg: #1a202c;
+  --dark-text: #e2e8f0;
+  --dark-card-bg: #2d3748;
+  --dark-border: #4a5568;
+  --dark-primary: #63b3ed;
+  --dark-primary-hover: #4299e1;
+  --dark-shadow: rgba(0, 0, 0, 0.3); /* Sombra más sutil en oscuro */
+}
+
+body {
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body.light {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+body.dark {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+.app-container {
+  max-width: 960px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--light-shadow);
+  background-color: var(--light-card-bg);
+  flex-grow: 1;
+}
+
+body.dark .app-container {
+  background-color: var(--dark-card-bg);
+  box-shadow: 0 10px 30px var(--dark-shadow);
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--light-border);
+  margin-bottom: 1.5rem;
+}
+
+body.dark .app-header {
+  border-bottom: 1px solid var(--dark-border);
+}
+
+.app-main {
+  padding: 1rem 0;
+}
+
+.app-title {
+  font-size: 2.2rem;
+  margin: 0;
+  font-weight: 700;
+  color: var(--light-text);
+}
+
+body.dark .app-title {
+  color: var(--dark-text);
+}
+
+.page-container {
+  padding: 2.5rem;
+  background-color: var(--light-card-bg);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--light-border);
+}
+
+body.dark .page-container {
+  background-color: #1e1e1e;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.05);
+}
+
+h2 {
+  font-size: 2rem;
+  color: var(--light-primary);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+body.dark h2 {
+  color: var(--dark-primary);
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+button,
+input[type='text'] {
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--light-border);
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s ease,
+    border-color 0.3s ease;
+  outline: none;
+}
+
+body.dark input[type='text'] {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+  border-color: var(--dark-border);
+}
+
+button {
+  background-color: var(--light-primary);
+  color: #fff;
+  font-weight: 600;
+  border: none;
+}
+
+body.dark button {
+  background-color: var(--dark-primary);
+}
+
+button.dark button {
+  background-color: #4da6ff;
+}
+
+button:hover {
+  background-color: var(--light-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+body.dark button:hover {
+  background-color: var(--dark-primary-hover);
+}
+
+input[type='text'] {
+  margin-right: 1.5rem;
+  min-width: 200px;
+}
+
+.login-form {
+  display: flex;
+  gap: 1rem;
+}
+
+.link {
+  color: var(--light-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+body.dark .link {
+  color: var(--dark-primary);
+}
+
+.link:hover {
+  text-decoration: underline;
+  color: var(--light-primary-hover);
+}
+
+body.dark .link:hover {
+  color: var(--light-primary-hover);
+}
+
+.theme-switcher {
+  background-color: var(--light-primary);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+body.dark .theme-switcher {
+  background-color: var(--dark-primary);
+}
+
+.theme-switcher:hover {
+  background-color: var(--light-primary-hover);
+  transform: scale(1.02);
+}
+
+body.dark .theme-switcher:hover {
+  background-color: var(--dark-primary-hover);
+}

@@ -3,7 +3,7 @@ import { useAuth } from '../hooks/useAuth';
 function Dashboard() {
   const { user } = useAuth();
   return (
-    <div>
+    <div className="page-container">
       <h2>Dashboard</h2>
       <p>Welcome to your private dashboard, {user?.name}!</p>
       <p>This page is only visible to authenticated users.</p>
