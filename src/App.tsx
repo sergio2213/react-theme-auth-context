@@ -2,6 +2,11 @@ import { useEffect } from 'react';
 import ThemeSwitcher from './components/ThemeSwitcher';
 import { useTheme } from './hooks/useTheme';
 import './App.css';
+import { Route, Routes } from 'react-router';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import ProtectedRoute from './components/ProtectedRoute';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   const { theme } = useTheme();
@@ -11,9 +16,20 @@ function App() {
   }, [theme]);
   return (
     <div className="app-container">
-      <h1>Hello, World!</h1>
-      <h2>Current theme: {theme}</h2>
-      <ThemeSwitcher />
+      <header style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+        <h1 style={{ margin: 0 }}>Hello, World!</h1>
+        <h2>Current theme: {theme}</h2>
+        <ThemeSwitcher />
+      </header>
+      <main>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Route>
+        </Routes>
+      </main>
     </div>
   );
 }
