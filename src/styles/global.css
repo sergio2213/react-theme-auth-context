@@ -215,3 +215,55 @@ body.dark .theme-switcher {
 body.dark .theme-switcher:hover {
   background-color: var(--dark-primary-hover);
 }
+
+.app-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logout-button {
+  background-color: transparent;
+  border: 1px solid var(--light-primary);
+  color: var(--light-primary);
+  padding: 0.5rem 1rem;
+}
+
+body.dark .logout-button {
+  border-color: var(--dark-primary);
+  color: #fff;
+}
+
+.logout-button:hover {
+  background-color: var(--light-primary);
+  color: #fff;
+}
+
+body.dark .logout-button:hover {
+  background-color: var(--dark-primary);
+}
+
+.login-link {
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--light-text);
+  transition: color 0.2s ease;
+}
+
+body.dark .login-link {
+  color: var(--dark-text);
+}
+
+.login-link:hover {
+  color: var(--light-primary);
+}
+
+body.dark .login-link:hover {
+  color: var(--dark-primary);
+}
